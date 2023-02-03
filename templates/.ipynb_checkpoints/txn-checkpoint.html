@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Papaya Demo</title>
+  </head>
+  <body>
+    <h1>Hello {{name}}, make a Transaction</h1>
+    {% if error %}
+    <h2> {{ error }} </h2>
+    {% else %}
+        {% if msg %}
+        <h2> {{ msg }} </h2>
+        {% endif %}
+    {% endif %}
+  <form action="" method="post">
+        <div class="container">
+            <label for="toUser"><b>Enter Username of Person To Whom You Want To Send Crypto</b></label>
+            <input type="text" placeholder="Enter Username" name="toUser" required>
+        </div>
+        <div class = "container">
+            <label for = "amountRange"><b>Enter Amount to Send in Wei </b></label>
+            <input type="range" name="amountRange" min="0" max= {{ balance }} value="0" oninput="this.form.amountInput.value=this.value" />
+            <input type="number" name="amountInput" min="0" max= {{ balance }} value="0" oninput="this.form.amountRange.value=this.value" />
+        </div>
+        <div class = "container">
+            <label><input type="checkbox" checked="checked" name="signed"> Sign Transaction </label>
+            <button type="submit">Submit Transaction</button>
+        </div>
+    </form>
+  </body>
+</html>
