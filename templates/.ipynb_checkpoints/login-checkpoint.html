@@ -6,7 +6,7 @@
   <body>
     <h1>Please Log In With Solid Community Credentials</h1>
     <h2>If you do not have an account you can create one <a href="https://solidcommunity.net/">here</a> </h2>
-    <form action="action_page.php" method="post">
+    <form action="" method="post">
         <div class="container">
             <label for="username"><b>Username</b></label>
             <input type="text" placeholder="Enter Username" name="username" required>
@@ -15,5 +15,8 @@
             <button type="submit">Login</button>
         </div>
     </form>
+    {% if error %}
+    <h2> {{ error }} </h2>
+    {% endif %}
   </body>
 </html>
