@@ -45,6 +45,14 @@ def login():
             error = inst
     return render_template('login.html', error=error)
 
+@app.route('/avatar')
+def avatar():
+    # implement not pre existing avatar later
+    # get avatar url from pod public folder
+    return render_template('avatar.html', name = session['papayademousername'], avatar_url = "https://models.readyplayer.me/64025feace7f75d51cdb8462.glb")
+    
+    
+
 @app.route('/wallet')
 def wallet():
     uname = session['papayademousername']
