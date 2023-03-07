@@ -50,6 +50,12 @@ def avatar():
     # implement not pre existing avatar later
     # get avatar url from pod public folder
     return render_template('avatar.html', name = session['papayademousername'], avatar_url = "https://models.readyplayer.me/64025feace7f75d51cdb8462.glb")
+
+@app.route('/avatarcreator')
+def avatarcreator():
+    # implement not pre existing avatar later
+    # get avatar url from pod public folder
+    return render_template('avatarcreator.html')
     
     
 
