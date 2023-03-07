@@ -36,7 +36,7 @@ def login():
         try:
             IDP = 'https://solidcommunity.net'
             auth.login(IDP, request.form['username'], request.form['password'])
-            profile = solid_connection.get('https://ramtest.solidcommunity.net/profile/card#me')
+            profile = solid_connection.get('https://'+request.form['username']+'.solidcommunity.net/profile/card#me')
             uname = re.findall(r'foaf:name \"(.*)\"',profile.text)[0]
             session['papayademousername'] = uname
             session['papayademoacctname'] = request.form['username']
@@ -49,12 +49,22 @@ def login():
 def avatar():
     # implement not pre existing avatar later
     # get avatar url from pod public folder
-    return render_template('avatar.html', name = session['papayademousername'], avatar_url = "https://models.readyplayer.me/64025feace7f75d51cdb8462.glb")
+    USERNAME = session['papayademoacctname']
+    avatar_file_url = 'https://'+USERNAME+'.solidcommunity.net/public/avatar.md'
+    avatar_url_from_pod = solid_connection.get(avatar_file_url).text
+    return render_template('avatar.html', name = session['papayademousername'], avatar_url = avatar_url_from_pod)
 
-@app.route('/avatarcreator')
+@app.route('/avatarcreator', methods=['POST', 'GET'])
 def avatarcreator():
     # implement not pre existing avatar later
     # get avatar url from pod public folder
+    USERNAME = session['papayademoacctname']
+    if request.method == 'POST' :
+        avatar_file_url = 'https://'+USERNAME+'.solidcommunity.net/public/avatar.md'
+        avatar_url = request.form['avatarUrl']
+        f = io.BytesIO(avatar_url.encode('UTF-8'))
+        solid_connection.put_file(avatar_file_url, f, 'text/markdown')
+        return redirect(url_for("avatar"))
     return render_template('avatarcreator.html')
     
     

@@ -41,6 +41,14 @@
 
     <input type="button" value="Open Ready Player Me" onClick="displayIframe()" />
     <p id="avatarUrl">Avatar URL:</p>
+    
+    <form action="" method="post">
+        <div class="container">
+            <label for="avatarUrl"><b>Avatar Url</b></label>
+            <input type="text" placeholder="Copy and Paste the URL Above" name="avatarUrl" required>
+            <button type="submit">Save</button>
+        </div>
+    </form>
 
     <iframe id="frame" class="frame" allow="camera *; microphone *; clipboard-write" hidden></iframe>
 
