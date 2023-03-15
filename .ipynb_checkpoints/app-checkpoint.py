@@ -4,6 +4,7 @@ from solid.auth import Auth
 from getpass import getpass
 from web3 import Web3, HTTPProvider
 from web3.middleware import geth_poa_middleware
+from greenPapayaDataUtils import greenPapayaDataUtils
 import json
 import io
 import re
@@ -160,6 +161,21 @@ def txn():
     else :
         msg = "Welcome to the Transaction Form"
     return render_template('txn.html', error = error, msg = msg, balance = str(session['papayademobalance']))
+
+@app.route('/wallet/nfts')
+def nfts():
+    uname = session['papayademousername']
+    USERNAME = session['papayademoacctname']
+    error = None
+    chain = session['papayademochain']
+    wallet_address_url = 'https://'+ USERNAME +'.solidcommunity.net/public/wallet/'+ chain +'/testnet/wallet_address.md'
+    wallet_address_from_pod = solid_connection.get(wallet_address_url).text
+    gppya_data_utils = greenPapayaDataUtils()
+    nftjson = gppya_data_utils.getNFTsOwned(wallet_address_from_pod)
+    nftstr = json.dumps(nftjson)
+    return render_template('nfts.html', name = uname, error = error, nft_string = nftstr)
+    
+    
         
     
     
