@@ -1,17 +1,21 @@
 <html>
+<!--  Load CSS in Flask with html-->
+    <link rel="stylesheet" href='/staticFiles/main.css' />
   <head>
-    <meta charset="utf-8" />
-    <title>Papaya Demo</title>
+    <title>Papayaverse Demo</title>
   </head>
   <body>
+    <h1> PAPAYAVERSE Demo </h1>
     {% if name %}
-    <h1>Welcome {{name}}!</h1>
-    <p><a href="/wallet" id="qsWalletBtn">Go To Wallet</a></p>
-    <p><a href="/avatar" id="qsAvatarBtn">Go To Avatar</a></p>
-    <p><a href="/avatarcreator" id="qsAvatarCreatorBtn">Go To Avatar Creator</a></p>
+    <h2>Welcome, {{name}}!</h2>
+    <p>
+    <a href="/wallet" class = "button" id="qsWalletBtn">Go To Wallet</a>
+    <a href="/avatar" class = "button" id="qsAvatarBtn">Go To Avatar</a>
+    <a href="/avatarcreator" class = "button" id="qsAvatarCreatorBtn">Go To Avatar Creator</a> 
+    </p>
     {% else %}
-    <h1 id="profileDropDown">Welcome Guest</h1>
-    <p><a href="/login" id="qsLoginBtn">Login</a></p>
+    <h2>Welcome, Guest</h2>
+    <p><a href="/login" class = "button" id="qsLoginBtn">Login</a></p>
     {% endif %}
   </body>
 </html>

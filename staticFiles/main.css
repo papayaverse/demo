@@ -1,0 +1,43 @@
+@font-face {
+   font-family: Baron;
+   src: url(fonts/BaronNeue-Regular.otf);
+}
+
+.button {
+        background-color: #ff7431;
+        border: none;
+        color: White;
+        padding: 20px 34px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+body {
+  background: linear-gradient(180deg, #000000 0%, #041F43 100%);
+  text-align: center;
+  margin-top: 50px;
+  margin-left: 100px;
+  }
+ 
+h1 {
+  font-family: Baron;
+  font-size: 2.5em;
+  color: #ff7431;
+  }
+
+h2 {
+  font-family: Georgia, serif;
+  font-size: 2.5em;
+  color: #00c2cb;
+  }
+ 
+p {
+  font-family: Georgia, serif;
+  font-size: 1.2em;
+  color: White;
+  }
+

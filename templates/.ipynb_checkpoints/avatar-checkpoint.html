@@ -1,4 +1,6 @@
 <html lang="en">
+<!--  Load CSS in Flask with html-->
+    <link rel="stylesheet" href='/staticFiles/main.css' />
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport"
@@ -9,13 +11,15 @@
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <style>
         #modelviewer {
-            height: 400px;
-            width: 600px;
+            width: 100%;
+            height: 80%;
         }
     </style>
 </head>
 
 <body>
+    <h1> PAPAYAVERSE Demo </h1>
+    <h1> Avatar Viewer </h1>
     <model-viewer id="modelviewer" alt="Ready Player Me Avatar"
         src="{{ avatar_url }}" shadow-intensity="1" camera-controls
         touch-action="pan-y">

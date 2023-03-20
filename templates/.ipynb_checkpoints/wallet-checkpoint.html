@@ -1,10 +1,13 @@
 <html>
+    <!--  Load CSS in Flask with html-->
+    <link rel="stylesheet" href='/staticFiles/main.css' />
   <head>
     <meta charset="utf-8" />
     <title>Papaya Demo</title>
   </head>
   <body>
-    <h1>Welcome {{name}} to your Wallet!</h1>
+    <h1> PAPAYAVERSE Demo </h1>
+    <h2> Welcomem, {{name}}, to your Wallet!</h2>
     {% if error %}
     <h2> {{ error }} </h2>
     {% else %}
@@ -12,8 +15,10 @@
         <h2> Created New Wallet For You </h2>
         {% endif %}
     <h2> Balance is {{ balance }} AVAX </h2>
-    <p><a href="/wallet/txn" id="txnButton">Make a Transaction</a></p>
-    <p><a href="/wallet/nfts" id="nftButton">View NFTs</a></p>
+    <p>
+    <a href="/wallet/txn" class = "button" id="txnButton">Make a Transaction</a>
+    <a href="/wallet/nfts" class = "button" id="nftButton">View NFTs</a>
+    </p>
     {% endif %}
   </body>
 </html>
