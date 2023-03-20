@@ -7,7 +7,7 @@
   </head>
   <body>
     <h1> PAPAYAVERSE Demo </h1>
-    <h1> Hello {{name}}, make a Transaction </h1>
+    <h2> Hello {{name}}, make a Transaction </h2>
     {% if error %}
     <h2> {{ error }} </h2>
     {% else %}
@@ -17,16 +17,24 @@
     {% endif %}
   <form action="" method="post">
         <div class="container">
-            <label for="toUser"><b>Enter Username of Person To Whom You Want To Send Crypto</b></label>
+            <p>
+            <label for="toUser"><b>Enter Username of Person To Whom You Want To Send Crypto: </b></label>
             <input type="text" placeholder="Enter Username" name="toUser" required>
+            </p>
         </div>
         <div class = "container">
+            <p>
             <label for = "amountRange"><b>Enter Amount to Send in Wei </b></label>
             <input type="range" name="amountRange" min="0" max= {{ balance }} value="0" oninput="this.form.amountInput.value=this.value" />
+            </p>
+            <p>
             <input type="number" name="amountInput" min="0" max= {{ balance }} value="0" oninput="this.form.amountRange.value=this.value" />
+            </p>
         </div>
         <div class = "container">
+            <p>
             <label><input type="checkbox" checked="checked" name="signed"> Sign Transaction </label>
+            </p>
             <button type="submit">Submit Transaction</button>
         </div>
     </form>

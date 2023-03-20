@@ -3,15 +3,22 @@
    src: url(fonts/BaronNeue-Regular.otf);
 }
 
+@font-face {
+   font-family: Inter;
+   src: url(fonts/Inter-Regular.woff);
+}
+
 .button {
         background-color: #ff7431;
         border: none;
+        border-radius: 25px;
         color: White;
         padding: 20px 34px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 20px;
+        font-size: 0.7em;
+        font-family: Inter;
         margin: 4px 2px;
         cursor: pointer;
     }
@@ -21,57 +28,73 @@ body {
   text-align: center;
   margin-top: 50px;
   margin-left: 100px;
+  color: white;
   }
  
 h1 {
   font-family: Baron;
   font-size: 2.5em;
+  text-align: center;
   color: #ff7431;
   }
 
 h2 {
-  font-family: Georgia, serif;
-  font-size: 2.5em;
+  font-family: Inter;
+  font-size: 1.2em;
   color: #00c2cb;
   }
  
 p {
-  font-family: Georgia, serif;
-  font-size: 1.2em;
+  font-family: Inter;
+  font-size: 0.8em;
   color: White;
   }
 
 input[type=button], input[type=submit], input[type=reset] {
   background-color: #00c2cb;
+  border-radius: 25px;
   border: none;
   color: black;
   padding: 16px 32px;
   text-decoration: none;
+  font: Inter;
   margin: 4px 2px;
   cursor: pointer;
 }
 
 label {
     color: white;
-    font-size: 1.2em;
+    font-size: 0.7em;
+    font: Inter;
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=number] {
     background-color: black;
     color: white;
-    font-size: 1.2em;
+    font-size: 0.7em;
+    font: Inter;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #00c2cb;
+  cursor: pointer;
+  width: 15rem;
 }
 
 button {
         background-color: #00c2cb;
         border: none;
+        border-radius: 25px;
         color: black;
         padding: 20px 34px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 1.2em;
+        font-size: 0.7em;
         margin: 4px 2px;
+        font: Inter;
         cursor: pointer;
     }
 

@@ -7,14 +7,14 @@
   </head>
   <body>
     <h1> PAPAYAVERSE Demo </h1>
-    <h2> Welcomem, {{name}}, to your Wallet!</h2>
+    <h2> Welcome, {{name}}, to your Wallet!</h2>
     {% if error %}
     <h2> {{ error }} </h2>
     {% else %}
         {% if new_wallet %}
         <h2> Created New Wallet For You </h2>
         {% endif %}
-    <h2> Balance is {{ balance }} AVAX </h2>
+    <h2> Your balance is {{ balance }} AVAX </h2>
     <p>
     <a href="/wallet/txn" class = "button" id="txnButton">Make a Transaction</a>
     <a href="/wallet/nfts" class = "button" id="nftButton">View NFTs</a>

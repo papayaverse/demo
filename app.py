@@ -52,12 +52,14 @@ def avatar():
     # get avatar url from pod public folder
     USERNAME = session['papayademoacctname']
     avatar_file_url = 'https://'+USERNAME+'.solidcommunity.net/public/avatar.md'
-    avatar_url_from_pod = solid_connection.get(avatar_file_url).text
-    return render_template('avatar.html', name = session['papayademousername'], avatar_url = avatar_url_from_pod)
+    if (solid_connection.item_exists(avatar_file_url)) :
+        avatar_url_from_pod = solid_connection.get(avatar_file_url).text
+        return render_template('avatar.html', name = session['papayademousername'], avatar_url = avatar_url_from_pod)
+    else :
+        redirect(url_for("avatarcreator"))
 
 @app.route('/avatarcreator', methods=['POST', 'GET'])
 def avatarcreator():
-    # implement not pre existing avatar later
     # get avatar url from pod public folder
     USERNAME = session['papayademoacctname']
     if request.method == 'POST' :
@@ -160,7 +162,7 @@ def txn():
             error = e
     else :
         msg = "Welcome to the Transaction Form"
-    return render_template('txn.html', error = error, msg = msg, balance = str(session['papayademobalance']))
+    return render_template('txn.html', name = session['papayademousername'], error = error, msg = msg, balance = str(session['papayademobalance']))
 
 @app.route('/wallet/nfts')
 def nfts():
