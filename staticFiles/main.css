@@ -41,3 +41,38 @@ p {
   color: White;
   }
 
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #00c2cb;
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+label {
+    color: white;
+    font-size: 1.2em;
+}
+
+input[type=text], input[type=password] {
+    background-color: black;
+    color: white;
+    font-size: 1.2em;
+}
+
+button {
+        background-color: #00c2cb;
+        border: none;
+        color: black;
+        padding: 20px 34px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1.2em;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+

@@ -41,24 +41,38 @@ p {
   color: White;
   }
 
-#submit {
-    background-color: #ff7431;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius:6px;
-    color: #fff;
-    font-family: 'Oswald';
-    font-size: 20px;
-    text-decoration: none;
-    cursor: pointer;
-    border:none;
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #00c2cb;
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 
-
-
-#submit:hover {
-    border: none;
-    background:#00c2cb;
-    box-shadow: 0px 0px 1px #777;
+label {
+    color: white;
+    font-size: 1.2em;
 }
+
+input[type=text], input[type=password] {
+    background-color: black;
+    color: white;
+    font-size: 1.2em;
+}
+
+button {
+        background-color: #00c2cb;
+        border: none;
+        color: black;
+        padding: 20px 34px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1.2em;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
 
