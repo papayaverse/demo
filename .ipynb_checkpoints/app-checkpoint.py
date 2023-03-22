@@ -26,10 +26,12 @@ def home():
     name = None
     if 'papayademousername' in session:
         name = session['papayademousername']
-    return render_template(
-        "home.html",
-        name = name,
-    )
+        return render_template(
+            "home.html",
+            name = name,
+        )
+    else :
+        return redirect(url_for("login"))
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     error = None
@@ -174,8 +176,7 @@ def nfts():
     wallet_address_from_pod = solid_connection.get(wallet_address_url).text
     gppya_data_utils = greenPapayaDataUtils()
     nftjson = gppya_data_utils.getNFTsOwned(wallet_address_from_pod)
-    nftstr = json.dumps(nftjson)
-    return render_template('nfts.html', name = uname, error = error, nft_string = nftstr)
+    return render_template('nfts.html', name = uname, error = error, total = nftjson['total'], nftjson = nftjson)
     
     
         

@@ -1,14 +1,39 @@
 <html>
+    <!--  Load CSS in Flask with html-->
+    <link rel="stylesheet" href='/staticFiles/main.css' />
+  <style>
+         table, th, td {
+            border: 1px solid white;
+         }
+      </style>
   <head>
     <meta charset="utf-8" />
     <title>Papaya Demo</title>
   </head>
   <body>
-    <h1>Welcome {{name}} to your NFTs!</h1>
+    <h1> PAPAYAVERSE DEMO </h1>
+    <h2>Welcome {{name}} to your NFTs!</h2>
     {% if error %}
     <h2> {{ error }} </h2>
+    {% elif total == 0 %}
+    <h2> No NFTs owned </h2>
     {% else %}
-    <h2> {{ nft_string }} </h2>
+    <table>
+    <tr>
+        <th>Collection</th>
+        <th>Token ID</th>
+        <th>Image</th>
+        <th>Description</th>
+    </tr>
+    {% for i in range(total) %}
+    <tr>
+        <td>{{ nftjson['assets'][i]['metadata']['name'] }}</td>
+        <td>{{ nftjson['assets'][i]['tokenId'] }}</td>
+        <td><img src="{{ nftjson['assets'][i]['metadata']['image'] }}" height="100" width="100"></td>
+        <td>{{ nftjson['assets'][i]['metadata']['description'] }}</td>
+    </tr>
+    {% endfor %}
+    </table>
     {% endif %}
   </body>
 </html>

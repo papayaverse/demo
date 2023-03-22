@@ -23,6 +23,21 @@
         cursor: pointer;
     }
 
+.button2 {
+        background-color: #ff7431;
+        border: none;
+        border-radius: 25px;
+        color: White;
+        padding: 2px 3px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 0.7em;
+        font-family: Inter;
+        margin: 2px 2px;
+        cursor: pointer;
+    }
+
 body {
   background: linear-gradient(180deg, #000000 0%, #041F43 100%);
   text-align: center;
